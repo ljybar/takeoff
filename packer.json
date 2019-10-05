@@ -1,0 +1,23 @@
+{
+"builders": [
+    {
+      "type": "googlecompute",
+      "project_id": "prod-254913",
+      "machine_type": "f1-micro",
+      "source_image": "ubuntu-1804-bionic-v20191002",
+      "region": "europe-west1",
+      "zone": "europe-west1-b",
+      "image_description": "ubuntu-image",
+      "image_name": "test-nginx-vm",
+      "disk_size": 10,
+      "ssh_username": "packer",
+      "account_file": "PROD-7b8c3ce77c6f.json"
+    }
+],
+"provisioners": [
+    {
+      "type": "shell",
+      "inline": ["sudo apt-get install nginx -y"]
+	  }
+]
+}
